@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS users
+(anonymous_id VARCHAR(50) NOT NULL,
+ user_id VARCHAR(256) NOT NULL,
+ site_id VARCHAR(256) NOT NULL,
+ channel VARCHAR(20) NULL,
+ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ PRIMARY KEY (anonymous_id),
+ KEY user_ind (user_id),
+ FOREIGN KEY (site_id) REFERENCES sites(site_id) ON DELETE CASCADE);

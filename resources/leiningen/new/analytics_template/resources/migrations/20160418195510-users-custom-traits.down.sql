@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS users_custom_traits;

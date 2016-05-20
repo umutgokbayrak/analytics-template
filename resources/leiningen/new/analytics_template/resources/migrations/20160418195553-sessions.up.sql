@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS sessions
+(session_id VARCHAR(50) NOT NULL,
+ site_id VARCHAR(256) NOT NULL,
+ user_id VARCHAR(256) NOT NULL,
+ prev_session_count INT DEFAULT 0,
+ channel VARCHAR(20) NULL,
+ ip VARCHAR(50) NULL,
+ locale VARCHAR(50) NULL,
+ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ updated_at TIMESTAMP NULL,
+ PRIMARY KEY (session_id),
+ FOREIGN KEY (user_id) REFERENCES users(user_id) ON UPDATE CASCADE,
+ FOREIGN KEY (site_id) REFERENCES sites(site_id) ON DELETE CASCADE);

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Analytics Demo Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <h1>Analytics Demo page</h1>
+    <ul>
+      <li>
+        Track an event<br/>
+        &lt;script&gt;<br/>
+          analytics.event('Event', {"key1": "value1", "key2": 122});<br/>
+        &lt;/script&gt;<br/>
+      </li>
+      <li>
+        Record a pageview<br/>
+        &lt;script&gt;<br/>
+          analytics.page('Index', {"title": document.title, "attribute": "test"});<br/>
+        &lt;/script&gt;<br/>
+      </li>
+      <li>
+        Identify a user
+        &lt;script&gt;<br/>
+        analytics.identify('12391273979', {"fullname": "Umut Gokbayrak", "age": 39, "visit-count": 12, "email": "hebelek@pismail.com"})<br/>
+        &lt;/script&gt;<br/>
+      </li>
+    </ul>
+    <script type='text/javascript'>
+      (function(){
+        var _ae = {}; _ae.load = function(site){
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.async = true;
+          script.id = "_ae";
+          script.src = 'js/analytics.js?s=' + site;
+          var first = document.getElementsByTagName('script')[0];
+          first.parentNode.insertBefore(script, first);
+        };
+        _ae.load('TEST-ID');
+      })();
+    </script>
+  </body>
+</html>
