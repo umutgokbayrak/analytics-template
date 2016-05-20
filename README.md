@@ -6,7 +6,11 @@ A Leiningen template for creating a fresh new analytics project.
 
 To start working on a new analytics project with Clojure, just install Leiningen and run
 
-  lein new analytics-template <your-project-name>
+
+```bash
+lein new analytics-template <your-project-name>
+```
+
 
 on console and you are done
 
