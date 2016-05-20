@@ -4,7 +4,7 @@ A Leiningen template for creating a fresh new analytics project.
 
 ## Usage
 
-To start working on a new analytics project with Clojure, just install Leiningen and run
+To start working on a new analytics project with Clojure, just install [Leiningen](http://leiningen.org) and run
 
 
 ```bash
