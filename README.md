@@ -52,6 +52,48 @@ from the console.
 Engine, will collect lots of information and store all data passed to it. In most cases you don't need that. Modify the analytics.config/analytics.clj and analytics.config/metrics.clj files to configure what to track and store into the database. 
 TODO: DB Indexes
 
+Once you run the app with lein ring server there is a sample web page at **http://localhost:3000/test.html** Point your browser to that page and on the development console you'll see that Analytics Engine is loaded. 
+
+If you wish to send an event to the engine just run the Javascript:
+
+```javascript
+analytics.event('Event', {"key1": "value1", "key2": 122});
+```
+
+To track a pageview run Javascript
+
+```javascript
+analytics.page('Index', {"title": document.title, "attribute": "test"});
+```
+
+If you wish to identify user with an identity or unify it through devices
+
+```javascript
+analytics.identify('12391273979', {"fullname": "Umut Gokbayrak", "age": 39, "visit-count": 12, "email": "hebelek@pismail.com"})
+```
+## Running in Production
+
+If you wish to run the generated analytics app in production you'll need to supply 6 System variables such as
+
+```bash
+ENV=prod
+DB_NAME=analytics
+DB_USER=root
+DB_PASS=supersecret
+DB_HOST=127.0.0.1
+DB_PORT=3306
+```
+
+If you'll place the analytics.js file on another server than you'll also need to modify the :api-url parameter at cljs/analytics/env.cljs file to point to the full url of your production server.
+
+```clojure
+(ns analytics.env)
+
+(def js-map {:app-name "Foo"
+             :app-version "1.0"
+             :api-url "http://my.domain.com/api"})
+
+```
 
 ## License
 
