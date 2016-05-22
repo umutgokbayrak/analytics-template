@@ -1,6 +1,6 @@
 # analytics-template
 
-A Leiningen template for creating a fresh new analytics project.
+A Leiningen template for creating a fresh new analytics project. It uses my basic analytics engine also available at  [GitHub](https://github.com/umutgokbayrak/analytics-engine) and [Clojars](https://clojars.org/org.clojars.umutgokbayrak/analytics-engine)
 
 ## Usage
 
