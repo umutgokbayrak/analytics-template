@@ -82,6 +82,7 @@ DB_USER=root
 DB_PASS=supersecret
 DB_HOST=127.0.0.1
 DB_PORT=3306
+export ENV DB_NAME DB_USER DB_PASS DB_HOST DB_PORT
 ```
 
 If you'll place the analytics.js file on another server than you'll also need to modify the :api-url parameter at cljs/analytics/env.cljs file to point to the full url of your production server.
